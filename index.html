@@ -575,6 +575,14 @@ Session Initiation
 ▪	The Identity Provider will be responsible for challenging the user requests with strong authentication schemes. The Identity Provider will also be responsible for collecting the user attributes and send it to Authenion through OAuth/OIDC tokens for further processing such as session establishment & granting user-access. 
 </p>
               </div>
+            <ol>
+  <li>User request access for Oracle Applications </li>
+  <li>Authenion checks for the user session, and it redirects the user’s request to IdP for authentication </li>
+  <li>IdP authenticates the user using the adapters and against a data store configured to it </li>
+  <li>Authenion will receive the authenticated user’s attributes and parse the attributes into HTTP-Headers and send it to the target application </li>
+  <li>IdP authenticates the user using the adapters and against a data store configured to it </li>
+  <li>Oracle Applications will retrieve & validate the HTTP-Headers from Authenion and grant access to users based on their roles and responsibilities </li>
+</ol>
 
 
            
