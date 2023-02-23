@@ -575,6 +575,7 @@ Session Initiation
 ▪	The Identity Provider will be responsible for challenging the user requests with strong authentication schemes. The Identity Provider will also be responsible for collecting the user attributes and send it to Authenion through OAuth/OIDC tokens for further processing such as session establishment & granting user-access. 
 </p>
               </div>
+            <h4>processing steps</h4>
             <ol>
   <li>User request access for Oracle Applications </li>
   <li>Authenion checks for the user session, and it redirects the user’s request to IdP for authentication </li>
@@ -585,82 +586,68 @@ Session Initiation
 </ol>
 
 
+         <div>
+                <h4>WHAT CAN CONFIGURE WITH AUTHENION?</h4>
+                <p>Authenion includes a wide range of configuration features from its user interface (administrative console). The following are the configuration we can perform in Authenion through its UI. </p>
+               
+              </div>  
+             <div>
+                <h4>INSTALL AUTHENION</h4>
+                <p>This section provides instructions for installing, configuring & starting/stopping Authenion. Authenion can be installed on the Linux servers. For the System requirements, please visit Section 2.  </p>
+               
+              </div> 
+             <h4>PRE-REQUISITES</h4>
+           <ol>
+  <li>Ensure the System Requirements are met. </li>
+  <li>Install a supported Java runtime. </li>
+  <li>The system environment variable JAVA_HOME must be set representing the location of your Java installation. </li>
+</ol>
+            <h4>install authenion</h4>
+<ol>
+  <li>Execute the below steps to install Authenion in your server</li>
+  <li>Request or download the authenion-2.0.zip distribution package and a valid license from the Authenion support portal or by contacting your account manager in LikeMinds. </li>
+  <li>Install authenion by unzipping the authenion-2.0.zio into the “/home/appuser” directory in your linux server.</li>
+  <li>Authenion file system after extracting. </li>
+   <li>	Copy 	the 	obtained 	license 	file 	“authenion.lic” 	to 	the 	Authenion 	server 	and 	place 	it 	in 	the 
+“<authenion_install_dir>/config” directory. 
+ </li>
+</ol>
+            <h4>SETUP AUTHENION</h4>
+            <ol>
+  <li>Navigate to the following directory in the Authenion server. 
+	 	<authenion_install_dir>/bin 
+</li>
+  <li>Execute the following command to grant permission. 
+ 	chmod +x * 
+</li>
+  <li>3.	Run the setup command 
+	 	 	./setup.sh 
+</li>
+               <li>Read and accept the Software Terms & Conditions. This will complete the setup process. </li>
+              </ol>
+            <h4>STATR &STOP AUTHENION</h4>
+            <ol>
+  <li>To Start the Authenion instance, navigate to the “<authenion_install_dir>/bin” directory and run the ‘startinstance.sh’ command. </li>
+  <li>To Stop the Authenion instance, run the ‘stop-instance.sh’ command. </li>
+  <li>Check the status of the Authenion application by executing the ‘status.sh’ command. </li>
+</ol>
+            <h4>AUTHENION HEALTH-CHECK</h4>
+            <p>To check the Authenion status through heartbeat URL, enter the following URL in the browser. This can be used for monitoring the Authenion instance status. </p>
+            <h4>Install Identity Provider’s Certificate into Authenion Trust Store </h4>
+            <p>The following steps will guide you to import the Identity provider’s certificate (PingFederate) into the Authenion trust store. 
+1.	Export the SSL Certificate from the Identity Provider (PingFederate, PingOne, AzureAD, etc.,) and place the certificate anywhere inside “<authenion_install_dir>” in the Authenion server. 
+2.	Run the following command in the Authenion server to install the Identity Provider’s certificate
+</p>
+              <h4>Install SSL Certificates for Authenion (Optional) </h4>
+            <p>Authenion allows you to install your organization’s signed certificates. The certificates should be in the .crt & .key files format. To place your organization’s cert in Authenion, follow the steps below. 
+1.	If you have the certificate & private key in pkcs format, move the certificate to the Authenion server & run the following commands. 
+ 
+ 
+2.	Copy the .crt & .key extracted in the previous step and place it in “<authenion_install_dir>/server/conf/certs” directory. 
+3.	The above steps can be repeated during the Authenion certificate renewal process. 
+</p>
+            
            
-           
-
-            <!-- Recent Sales -->
-            <div class="col-12">
-              <div class="card recent-sales overflow-auto">
-
-                <div class="filter">
-                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li class="dropdown-header text-start">
-                      <h6>Filter</h6>
-                    </li>
-
-                    <li><a class="dropdown-item" href="#">Today</a></li>
-                    <li><a class="dropdown-item" href="#">This Month</a></li>
-                    <li><a class="dropdown-item" href="#">This Year</a></li>
-                  </ul>
-                </div>
-
-                <div class="card-body">
-                  <h5 class="card-title">Recent Sales <span>| Today</span></h5>
-
-                  <table class="table table-borderless datatable">
-                    <thead>
-                      <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Customer</th>
-                        <th scope="col">Product</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Status</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row"><a href="#">#2457</a></th>
-                        <td>Brandon Jacob</td>
-                        <td><a href="#" class="text-primary">At praesentium minu</a></td>
-                        <td>$64</td>
-                        <td><span class="badge bg-success">Approved</span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">#2147</a></th>
-                        <td>Bridie Kessler</td>
-                        <td><a href="#" class="text-primary">Blanditiis dolor omnis similique</a></td>
-                        <td>$47</td>
-                        <td><span class="badge bg-warning">Pending</span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">#2049</a></th>
-                        <td>Ashleigh Langosh</td>
-                        <td><a href="#" class="text-primary">At recusandae consectetur</a></td>
-                        <td>$147</td>
-                        <td><span class="badge bg-success">Approved</span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">#2644</a></th>
-                        <td>Angus Grady</td>
-                        <td><a href="#" class="text-primar">Ut voluptatem id earum et</a></td>
-                        <td>$67</td>
-                        <td><span class="badge bg-danger">Rejected</span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">#2644</a></th>
-                        <td>Raheem Lehner</td>
-                        <td><a href="#" class="text-primary">Sunt similique distinctio</a></td>
-                        <td>$165</td>
-                        <td><span class="badge bg-success">Approved</span></td>
-                      </tr>
-                    </tbody>
-                  </table>
-
-                </div>
-
-              </div>
-            </div><!-- End Recent Sales -->
 
             <!-- Top Selling -->
             <div class="col-12">
