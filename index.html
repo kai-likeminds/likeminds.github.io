@@ -554,90 +554,31 @@
 </p>
                
               </div>
+            
+           <div>
+                <h4>getting started</h4>
+                <p>2 Enterprise Deployment Model 
+Authenion supports a Gateway architecture for its protected Oracle applications. In this model, the traffic is initially directed to Authenion. Authenion grants or denies access by redirecting the traffic to Authentication providers. 
+▪	This deployment model can be set up quickly without disrupting the applications. The Authenion will not be installed on separate servers from the application web servers. 
+▪	With the fewer component architecture, it is easy to identify issues and troubleshoot. All transactions are logged, and it is easier to view any specific events. 
+</p>
+                <p>3 What can I do with Authenion? 
+Authenion is a light-weight product that allows you to enable a secure Single Sign-On solution for your Oracle Enterprise applications. 
+The main functionalities: 
+▪	Use Authenion to protect Oracle applications 
+▪	Connect Authenion with external OpenID Connect providers for authentication 
+▪	You can manage sessions for the protected applications and use OAuth scopes to send user data to applications 
+3.4 How does Authenion work? 
+Authenion acts as the gateway to your Oracle Enterprise Applications and capture user requests & delegate it to your Identity Provider (IdP) for authentication. 
+Session Initiation 
+▪	Using advanced & secured integration standards, Authenion securely connects with your Identity Provider using OAuth/OIDC protocols. This allows Authenion protected Oracle Applications requests to be delegated to your centralized Identity Provider in your organization. 
+▪	The Identity Provider will be responsible for challenging the user requests with strong authentication schemes. The Identity Provider will also be responsible for collecting the user attributes and send it to Authenion through OAuth/OIDC tokens for further processing such as session establishment & granting user-access. 
+</p>
+              </div>
 
 
            
-            <!-- Reports -->
-            <div class="col-12">
-              <div class="card">
-
-                <div class="filter">
-                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li class="dropdown-header text-start">
-                      <h6>Filter</h6>
-                    </li>
-
-                    <li><a class="dropdown-item" href="#">Today</a></li>
-                    <li><a class="dropdown-item" href="#">This Month</a></li>
-                    <li><a class="dropdown-item" href="#">This Year</a></li>
-                  </ul>
-                </div>
-
-                <div class="card-body">
-                  <h5 class="card-title">Reports <span>/Today</span></h5>
-
-                  <!-- Line Chart -->
-                  <div id="reportsChart"></div>
-
-                  <script>
-                    document.addEventListener("DOMContentLoaded", () => {
-                      new ApexCharts(document.querySelector("#reportsChart"), {
-                        series: [{
-                          name: 'Sales',
-                          data: [31, 40, 28, 51, 42, 82, 56],
-                        }, {
-                          name: 'Revenue',
-                          data: [11, 32, 45, 32, 34, 52, 41]
-                        }, {
-                          name: 'Customers',
-                          data: [15, 11, 32, 18, 9, 24, 11]
-                        }],
-                        chart: {
-                          height: 350,
-                          type: 'area',
-                          toolbar: {
-                            show: false
-                          },
-                        },
-                        markers: {
-                          size: 4
-                        },
-                        colors: ['#4154f1', '#2eca6a', '#ff771d'],
-                        fill: {
-                          type: "gradient",
-                          gradient: {
-                            shadeIntensity: 1,
-                            opacityFrom: 0.3,
-                            opacityTo: 0.4,
-                            stops: [0, 90, 100]
-                          }
-                        },
-                        dataLabels: {
-                          enabled: false
-                        },
-                        stroke: {
-                          curve: 'smooth',
-                          width: 2
-                        },
-                        xaxis: {
-                          type: 'datetime',
-                          categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z"]
-                        },
-                        tooltip: {
-                          x: {
-                            format: 'dd/MM/yy HH:mm'
-                          },
-                        }
-                      }).render();
-                    });
-                  </script>
-                  <!-- End Line Chart -->
-
-                </div>
-
-              </div>
-            </div><!-- End Reports -->
+           
 
             <!-- Recent Sales -->
             <div class="col-12">
