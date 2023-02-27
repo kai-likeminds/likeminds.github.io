@@ -625,16 +625,143 @@ through any previously extracted configs.
 		  <h2>adding an application</h2>
 		  <p>Adding a protected application in Authenion has the following pre-requisites. Complete the setup for the below configurations before you create a new application
 		  </p>
+		<ul>
+  <li>virtual servers<ul>
+  <li>application hosts</li>
+ <li>header mapping</li>
+  <li>resources</li>
+</ul>
+	  <p>1.To add an application, click New Application in the Dashboard page. 
+2.Enter the following details: 
+</p>
+	  <ol>
+  <li>Application ID 	 	:   1 (Unique ID) </li>
+  <li>Virtual Servers 	 	:   ApexVirtualServer 	<selecting the virtual server configured>  </li>
+  <li>Header Mapping 	 	:   ApexHeaders 	 	<selecting the header mapping configured> </li>
+ <li>Protected Resource  	:   ApexResources 	 	<selecting the protected resource configured> </li>
+  <li>Excluded Resource  	:   UnprotectdResource 	<selecting the excluded resource configured> </li>
+  <li>Application Host 	 	:   ApexBackend 	 	<selecting the application host configured> </li>
+		   <li>Authenion Instances 	:   https://authenion.example.com:8090 	(auto populated) </li>
+  
+</ol>
+	  <p>3.Click Save to complete the configuration for a new application. </p>
+	  <h4>virtual servers</h4>
+	  <p>Virtual Servers enables you to protect multiple applications and their hosts. The Virtual Server is a combination of hostname and port number and is defined by example.com:443. 
+	  </p>
+	  <h4>adding a virtual server</h4>
+	  <p>1.	Click Virtual Servers in the sidebar menu. 
+2.	Click the “+ New Virtual Server” button in the Virtual Servers page. 
+3.	Enter the following details to create a Virtual Server for your application. 
+For example, 
+</p>
+	<ol>
+  <li>ID 	 	 	:   1 (Unique ID) </li>
+  <li>Name 	 	 	:   ApexVirtualServer </li>
+		
+  <li>Host 	 	 	:   authenion.example.com 	<protected application domain or hostname> </li>
+		<li>Port 	 	 	:   443 </li>
+  <li>Use SSL 	 	 	:   <checkbox> 	 	<HTTP or HTTPS> </li>
+</ol>	  
+	  
+	  <h4>headrer mappings</h4>
+	  <P>Header Mappings sends the User attributes to the target application post authentication. The target application will use them for validation purposes. The Header Mappings will receive the user attributes from the Claims which are sent by the Token Provider. Once the claims re received, it is then made available as HTTP-Headers to the target applications. </P>
+
+	  <h4>adding header mappings</h4>
+	  <p>1.	Click Header Mappings in the sidebar menu. 
+2.	Click the “+New Header Mapping” button in the Header Mappings page. 
+3.	Enter the following details to create a header mapping for your target application. 
+For example, 
+</p>
+	  <ol>
+  <li>ID 	 	 	:   1 (Unique ID) Name </li>
+  <li>Name 	 	 	:   ApexResources </li>
 		  
-            
+  <li>App Header 	 	OIDC Claim </li>
+  <li>USER_MAIL 	 	:   email </li>
+</ol>
+	  <h4>resources</h4>
+	  <p>Resources are the components/URI of the applications. The resources can be mapped as either protected or excluded resources in an application. Each application should have at least one protected & excluded resources configured to it. 
 
-        
-             
-
+</p>
+	  <h4>adding resources</h4>
+	  <P>1.	Click Resources in the sidebar menu. 
+2.	Click the “+New Resource” button in the Resources page. 
+3.	Enter the following details to create a Resources for your target application. 
+For example, 
+</p>
+	  <ol>
+  <li>ID 	 	 	:   1 (Unique ID) </li>
+  <li>Name 	 	 	:   ApexResources </li>
+  <li>Resource Path 
+	▪ 	/apex 	 	<Resource path starts with a ‘/’. Multiple resource paths can be added> 
+</li>
+</ol>
+	  <h4>authenion status</h4>
+	  <p>The Authenion Status page shows the health of the Authenion Instance that is running in the Authenion server. This status page also displays your authenion license information. </p>
+	  <h4>export</h4>
+	  <p>The Export button is a quick operation that lets you download the current configurations from the UI. The exported data will be in the format of a JSON file. This file acts as a backup for the Authenion configuration data. The downloaded file name is export.json. </p>
          
+	  <h4>sync</h4>
+	  <p>The Sync is a manual operation lets you push all the configuration data from Authenion UI back to the Authenion server. 
+When you install Authenion for the first time, there will be no configuration data in the UI or in the Authenion server. The Sync operation should be triggered for both new configurations & modifications that we perform in the Authenion UI. Any changes which are not pushed from the UI to Authenion server will not be reflected until Sync operation is triggered manually. 
+</p>
+	  <h4>Configure your Identity Provider <h4/>
+		  <p>This section provides the steps required to configure Authenion with the Identity/Token Providers like PingFederate, PingOne, Microsoft Azure, etc. The integration will be established through OAuth and OpenID Connect protocols.  
+		  </p>
+	  
+		  <h4>pingfederate as the token provider</h4>
+		  <P>pre-requisites</p>
+		  <ol>
+  <li>▪	PingFederate application with IdP and OAuth/OIDC roles enabled </li>
+  <li>▪	Authorization server setup in PingFed OAuth server setting </li>
+  <li>▪	A configured ping IdP adapter (or) authentication policy contract policy if required for authentication and grant mapping </li>
+</ol>
+		  <p>This setup will manage the configurations and policy information related to OAuth client which is Authenion in our case. </p>
+		  <p>1.	Create a new Client in PingFederate for Authenion. 
+ 
+ 
+ 
+ 
+2.	Map an OpenID Connect Policy to this Client with the following information: 
+For example, 
+</p>
+	  <ol>
+  <li>In OpenID Connect Policy management, 
+Configure the following attributes to be returned in id_token and as claims in userinfo endpoint. 
+▪	username 
+▪	email 
+</li>
+  <li>3.Review the client configurations and click “Save”. </li>
+  <li>4.Replicate the configurations if PingFederate is configured in a cluster. </li>
+		  <h4>microsoft azure active directory as the token provider</h4>
+		  <p>pre-requistes</p>
+			 <ol>
+  <li>Azure account with valid subscription </li>
+  <li>app regiration</li>
+  <li>client secrets</li>
+</ol>
+		  <P>The following will register Authenion as an OAuth/OIDC client application in Microsoft Azure & establishes a unidirectional trust relationship between Authenion and Microsoft identity platform. 
+			  </p>
+		  <ol>
+  <li>In the Azure Portal, switch to the tenant in which you want to register the Authenion application. </li>
+  <li>In the App registrations section, select New registration and register Authenion as web application with display name and any other required details. </li>
+  <li>Add the following Authenion URI in the Redirect URI field. This is the location where Microsoft Azure redirects the user’s request post authentication.Redirect URI 	:  https://<authenion-virtualserver>/ssolibrary/oidc/callback 
 
-           
-         
+ </li>
+			  <li>When the registration finishes, the Azure portal displays the Authenion application registration’s overview pane. You can find the Application ID which will also be used as the client_id when we connect Authenion & Azure through OAuth/OIDC. </li>
+  <li>You need to Credential in ‘Certificates & Secrets’ page. This acts as the client credential for the Authenion application, and it allows Authenion to authenticate as itself to Microsoft Azure. </li>
+  
+<li>The Authenion client application need to access resources in a web API. You can use the Microsoft Azure platform for authorizing scopes, permissions-based access to fetch the appropriate user data. </li>
+			  <li>The user data can be added as claims using the OIDC userinfo endpoint. Any attributes that are required by the target application can ab added as claims in the userinfo endpoint. </li>
+</ol>
+
+	  
+	  
+	  
+	  
+	  
+	  
+	  
 
         </div><!-- End Right side columns -->
 
@@ -646,14 +773,14 @@ through any previously extracted configs.
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
     <div class="copyright">
-      &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+      &copy; Copyright <strong><span>authenion</span></strong>. All Rights Reserved
     </div>
     <div class="credits">
       <!-- All the links in the footer should remain intact. -->
       <!-- You can delete the links only if you purchased the pro version. -->
       <!-- Licensing information: https://bootstrapmade.com/license/ -->
       <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      Designed by <a href="https://bootstrapmade.com/">like minds consulting</a>
     </div>
   </footer><!-- End Footer -->
 
