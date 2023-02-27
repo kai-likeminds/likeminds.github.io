@@ -174,7 +174,7 @@
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>system </span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="bi bi-menu-button-wide"></i><span>system reqirements </span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
          <li>
@@ -422,51 +422,66 @@
               </div>
             <div>
                 <h4>system reuirement</h4>
-                <p>1 Supported Operating Systems 
-▪	Red Hat Enterprise Linux 7 & above 
-▪	CentOS 7 & above 
-▪	Oracle Enterprise Linux 7 & above 
- 	 
-2.2 Linux User requirements in the Authenion Server 
-▪	Dedicated Linux user in the name of ‘appuser’ needs to be created to execute Authenion scripts. 
-▪	The Linux user should be granted with Read/Write privileges for the Authenion deployment package. The Authenion should be installed in the ‘/home/appuser’ directory. 
- 
-2.3 Supported Java environment 
-▪	OpenJDK 11 
-▪	Oracle Java SE Development Kit 11 LTS / Oracle Java SE Runtime Environment (Server JRE) 8 
-2.4 Minimum Hardware requirements 
-▪	2 CPU/Cores recommended 
-▪	2 GB of RAM 
-▪	15 GB available space 
- 
-2.5 Recommended Hardware requirements 
-▪	4 CPU/Cores recommended 
-▪	4 GB of RAM 
-▪	30 GB available space 
-</p>
-               
+		    <h4>support operating system</h4>
+		    <ol>
+  <li>	Red Hat Enterprise Linux 7 & above </li>
+  <li>CentOS 7 & above </li>
+  <li>Oracle Enterprise Linux 7 & above </li>
+</ol>
+		    <h4><linux uaser requirements in the authenion server/h4>
+			    <ol>
+  <li>Dedicated Linux user in the name of ‘appuser’ needs to be created to execute Authenion scripts. </li>
+  <li>The Linux user should be granted with Read/Write privileges for the Authenion deployment package. The Authenion should be installed in the ‘/home/appuser’ directory. </li>
+  <li></li>
+</ol>
+			    <h4>support java environment</h4>
+		    
+		     <li>OpenJDK 11 </li>
+			     <li>Oracle Java SE Development Kit 11 LTS / Oracle Java SE Runtime Environment (Server JRE) 8 </li>
+			    <h4>minimum hardware requirements</h4>
+			    <ol>
+  <li>2 CPU/Cores recommended </li>
+  <li>2 GB of RAM </li>
+  <li>15 GB available space </li>
+</ol>
+			    <h4>Recommended Hardware requirements </h4>
+		    
+		      <li> CPU/Cores recommended </li> 
+			    <li>4 GB of RAM </li>
+			      <li>30 GB available space </li>
+			    <h4>port reqirements</h4>
+			    <p>The following summarizes the ports and protocols that Authenion uses to communicate with external components. This information provides guidance for firewall administrators to ensure the correct ports are available across network segments. </p>
+		    
+			    <h4>getting started</h4>
+			    <p>Enterprise Deployment Model</p>
+			    <p>Authenion supports a Gateway architecture for its protected Oracle applications. In this model, the traffic is initially directed to Authenion. Authenion grants or denies access by redirecting the traffic to Authentication providers. </p>
+			    <ol>
+				    <li>This deployment model can be set up quickly without disrupting the applications. The Authenion will not be installed on separate servers from the application web servers. 
+With the fewer component architecture, it is easy to identify issues and troubleshoot. All transactions are logged, and it is easier to view any specific events. 
+</li>
+				    <ol>
+					    <h4>what can i do with authenion</h4>
+					    <p>Authenion is a light-weight product that allows you to enable a secure Single Sign-On solution for your Oracle Enterprise applications. </p>
+					    
+              
+					    <ol>
+						    <li>Use Authenion to protect Oracle applications </li>
+						     <li>Connect Authenion with external OpenID Connect providers for authentication </li>
+						     <li>You can manage sessions for the protected applications and use OAuth scopes to send user data to applications </li>
+					    </ol>    
+					    <h4>How does Authenion work? </h4>
+					    <p>Authenion acts as the gateway to your Oracle Enterprise Applications and capture user requests & delegate it to your Identity Provider (IdP) for authentication. </p>
+					    <p>session initiation</p>
+					    
+					    <ol>
+						    <li>Using advanced & secured integration standards, Authenion securely connects with your Identity Provider using OAuth/OIDC protocols. This allows Authenion protected Oracle Applications requests to be delegated to your centralized Identity Provider in your organization</li>
+						     <li>The Identity Provider will be responsible for challenging the user requests with strong authentication schemes. The Identity Provider will also be responsible for collecting the user attributes and send it to Authenion through OAuth/OIDC tokens for further processing such as session establishment & granting user-access. </li>
+					    </ol>
+					    
+					    
               </div>
             
-           <div>
-                <h4>getting started</h4>
-                <p>2 Enterprise Deployment Model 
-Authenion supports a Gateway architecture for its protected Oracle applications. In this model, the traffic is initially directed to Authenion. Authenion grants or denies access by redirecting the traffic to Authentication providers. 
-▪	This deployment model can be set up quickly without disrupting the applications. The Authenion will not be installed on separate servers from the application web servers. 
-▪	With the fewer component architecture, it is easy to identify issues and troubleshoot. All transactions are logged, and it is easier to view any specific events. 
-</p>
-                <p>3 What can I do with Authenion? 
-Authenion is a light-weight product that allows you to enable a secure Single Sign-On solution for your Oracle Enterprise applications. 
-The main functionalities: 
-▪	Use Authenion to protect Oracle applications 
-▪	Connect Authenion with external OpenID Connect providers for authentication 
-▪	You can manage sessions for the protected applications and use OAuth scopes to send user data to applications 
-3.4 How does Authenion work? 
-Authenion acts as the gateway to your Oracle Enterprise Applications and capture user requests & delegate it to your Identity Provider (IdP) for authentication. 
-Session Initiation 
-▪	Using advanced & secured integration standards, Authenion securely connects with your Identity Provider using OAuth/OIDC protocols. This allows Authenion protected Oracle Applications requests to be delegated to your centralized Identity Provider in your organization. 
-▪	The Identity Provider will be responsible for challenging the user requests with strong authentication schemes. The Identity Provider will also be responsible for collecting the user attributes and send it to Authenion through OAuth/OIDC tokens for further processing such as session establishment & granting user-access. 
-</p>
-              </div>
+          
             <h4>processing steps</h4>
             <ol>
   <li>User request access for Oracle Applications </li>
