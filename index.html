@@ -232,8 +232,8 @@
             </a>
           </li>
           <li>
-            <a href="#how does authenion work">
-              <i class="bi bi-circle"></i><span>how does authenion work</span>
+            <a href="#How does Authenion work?">
+              <i class="bi bi-circle"></i><span>How does Authenion work?</span>
             </a>
           </li> 
           <li>
@@ -255,12 +255,12 @@
         </a>
         <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
          <li>
-            <a href="#pre-requisites">
-              <i class="bi bi-circle"></i><span>pre-requisites</span>
+            <a href="#PRE-REQUISITES">
+              <i class="bi bi-circle"></i><span>PRE-REQUISITES</span>
             </a>
           </li>
           <li>
-            <a href="#top section">
+            <a href="#install authenion">
 		    <i class="bi bi-circle"></i><span>install authenion</span>
             </a>
           </li> 
@@ -270,13 +270,13 @@
             </a>
           </li>
           <li>
-            <a href="#start&stop authenion">
-              <i class="bi bi-circle"></i><span>start&stop authenion</span>
+            <a href="#START&STOP AUTHENION">
+              <i class="bi bi-circle"></i><span>START&STOP AUTHENION</span>
             </a>
           </li> 
            <li>
-            <a href="#authenion health-check">
-              <i class="bi bi-circle"></i><span>authenion health-check</span>
+            <a href="#AUTHENION HEALTH-CHECK">
+              <i class="bi bi-circle"></i><span>AUTHENION HEALTH-CHECK</span>
             </a>
           </li>
           <li>
@@ -285,8 +285,8 @@
             </a>
           </li> 
            <li>
-            <a href="#install ssl certificate for authenion">
-              <i class="bi bi-circle"></i><span>install ssl certificate for authenion</span>
+            <a href="#Install SSL Certificates for Authenion (Optional)">
+              <i class="bi bi-circle"></i><span>Install SSL Certificates for Authenion (Optional)</span>
             </a>
           </li>
           
@@ -518,8 +518,8 @@ With the fewer component architecture, it is easy to identify issues and trouble
 
 
          <div>
-		 <a name="WHAT CAN CONFIGURE WITH AUTHENION?"</a>
-                <h4>WHAT CAN CONFIGURE WITH AUTHENION?</h4>
+		 <a name="what can i configure with authenion"</a>
+                <h4>what can i configure with authenion</h4>
                 <p>Authenion includes a wide range of configuration features from its user interface (administrative console). The following are the configuration we can perform in Authenion through its UI. </p>
                
               </div>  
@@ -554,7 +554,7 @@ With the fewer component architecture, it is easy to identify issues and trouble
 		</div>	  
 		  
 		  <div>
-		  <a name="SETUP AUTHENION"</a>
+		  <a name="setup authenion"</a>
 		  
             <h4>SETUP AUTHENION</h4>
             <ol>
@@ -583,11 +583,16 @@ With the fewer component architecture, it is easy to identify issues and trouble
 		  <a name="AUTHENION HEALTH-CHECK"</a>
             <h4>AUTHENION HEALTH-CHECK</h4>
             <p>To check the Authenion status through heartbeat URL, enter the following URL in the browser. This can be used for monitoring the Authenion instance status. </p>
-            <h4>Install Identity Provider’s Certificate into Authenion Trust Store </h4>
+			  </div>
+			  <div>
+				  <a name="install identiy provider's certificate into authenion trust store"</a>
+				  <h4>Install Identity Provider’s Certificate into Authenion Trust Store </h4>
             <p>The following steps will guide you to import the Identity provider’s certificate (PingFederate) into the Authenion trust store. 
 1.	Export the SSL Certificate from the Identity Provider (PingFederate, PingOne, AzureAD, etc.,) and place the certificate anywhere inside “<authenion_install_dir>” in the Authenion server. 
 2.	Run the following command in the Authenion server to install the Identity Provider’s certificate
 </p>
+			  </div>
+			  <div>
               <h4>Install SSL Certificates for Authenion (Optional) </h4>
             <p>Authenion allows you to install your organization’s signed certificates. The certificates should be in the .crt & .key files format. To place your organization’s cert in Authenion, follow the steps below. 
 1.	If you have the certificate & private key in pkcs format, move the certificate to the Authenion server & run the following commands. 
