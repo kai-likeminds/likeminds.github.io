@@ -593,6 +593,7 @@ With the fewer component architecture, it is easy to identify issues and trouble
 </p>
 			  </div>
 			  <div>
+				  <a name="Install SSL Certificates for Authenion (Optional)"</a>
               <h4>Install SSL Certificates for Authenion (Optional) </h4>
             <p>Authenion allows you to install your organization’s signed certificates. The certificates should be in the .crt & .key files format. To place your organization’s cert in Authenion, follow the steps below. 
 1.	If you have the certificate & private key in pkcs format, move the certificate to the Authenion server & run the following commands. 
@@ -717,6 +718,28 @@ through any previously extracted configs.
 </ol>
 	  <p>3.Click Save to complete the configuration for a new application. </p>
 			</div>
+				  <div>
+					  
+					   <a name="application hosts"</a>
+					  <h4>application hosts</h4>
+					  <p> 
+				</p>Applications Hosts are the target applications or the backend application servers that Authenion is protecting through a gateway architecture. These target application’s access requests are validated by Authenion before they are forwarded. 
+
+Adding Application Hosts 
+1.	Click Application Hosts in the sidebar menu. 
+2.	Click the “+New Application Host” button in the Application Hosts page. 
+3.	Enter the following details to create an Application Host for your target application server. 
+For example, 
+	ID 	 	 	:   1 (Unique ID) 
+	Name 	 	 	:   ApexBackend 
+	Host 	 	 	:   apex.example.com:8443 	<protected application/webserver details> 
+	Use SSL 	 	 	:   <checkbox> 	 	<HTTP or HTTPS> 
+
+
+				  </div>
+				  
+				  
+				  
 	  <div>
 	  <a name="virtual servers"</a>
 	  <h4>virtual servers</h4>
@@ -725,6 +748,10 @@ through any previously extracted configs.
 			</div>
 				  <div>
 					  <a name=""</a>
+					  <h4>application hosts</h4>
+					  <p></p>
+					  
+					  
 	  <h4>adding a virtual servers</h4>
 	  <p>1.	Click Virtual Servers in the sidebar menu. 
 2.	Click the “+ New Virtual Server” button in the Virtual Servers page. 
