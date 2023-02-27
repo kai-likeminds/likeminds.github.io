@@ -299,8 +299,8 @@
         </a>
         <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="#dashboard/applications">
-              <i class="bi bi-circle"></i><span>dashboard/applications</span>
+            <a href="#dashboard/application">
+              <i class="bi bi-circle"></i><span>dashboard/application</span>
             </a>
           </li>
          <li>
@@ -309,8 +309,8 @@
             </a>
           </li>
           <li>
-            <a href="#oidc configuration">
-              <i class="bi bi-circle"></i><span>oidc configuration</span>
+            <a href="#OIDC CONFIGURATION">
+              <i class="bi bi-circle"></i><span>OIDC CONFIGURATION</span>
             </a>
           </li>
             </a>
@@ -321,7 +321,7 @@
             </a>
           </li>
        <li>
-            <a href="charts-chartjs.html">
+            <a href="#applications">
               <i class="bi bi-circle"></i><span>applications</span>
             </a>
           </li>
@@ -338,8 +338,8 @@
             </a>
           </li>
           <li>
-            <a href="#header mapping">
-              <i class="bi bi-circle"></i><span>header mapping</span>
+            <a href="#headrer mappings">
+              <i class="bi bi-circle"></i><span>headrer mappings</span>
             </a>
           </li>
    <li>
@@ -373,8 +373,8 @@
         </a>
         <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="#ping federate as the token provider">
-              <i class="bi bi-circle"></i><span>ping federate as the token provider</span>
+            <a href="#pingfederate as the token provider">
+              <i class="bi bi-circle"></i><span>pingfederate as the token provider</span>
             </a>
           </li>
           <li>
@@ -597,6 +597,7 @@ With the fewer component architecture, it is easy to identify issues and trouble
 3.	The above steps can be repeated during the Authenion certificate renewal process. 
 </p>
 			  </div>
+			  <div>
 		    <a name="AUTHENION UI, NAVIGATION & CONFIGURATION"</a>
 		  <h4>AUTHENION UI, NAVIGATION & CONFIGURATION</h4>  
 		  <p>
@@ -605,10 +606,15 @@ Accessing the Authenion UI (Administrative console)
 https://launch.authenion.com  
  
 </p>
+			  </div>
+			  <div>
+			  <a name="dashboard/application"</a>
 		  
 		  <h4>dashboard/application</h4>
 		  <p>The Dashboard lets you view, create, or modify applications. The total protected applications will be displayed in the Dashboard Application’s tab. It also lets you access the OIDC Configuration next to the Applications tab and access the sidebar menu for configurations. The Dashboard also lets you access the OIDC Configuration page which is next to the Application’s tab. </p>
-
+			  </div>
+			  <div>
+				  <a name="import-getting config data into the UI"</a>
 		  <h4>IMPORT-GETTING CONFIG DATA INTO THE UI</h4>
 		  <p>The Import button in the Dashboard page lets you get the data into the UI. 
 
@@ -622,6 +628,9 @@ retrieves all the Authenion config data and makes it available in the Authenion 
   <li>Upload: The Upload operation is used to load the data from your local file system into the UI manually 
 through any previously extracted configs. 
 </li>
+			  </div>
+				  <div>
+					  <a name="GETTING CONFIG DATA"</a>
 			  <h2>GETTING CONFIG DATA</h2>
 			 
   <li>For first time installation & configuration of Authenion, skip this step and continue with section 5.1 – OIDC Configuration. </li>
@@ -632,6 +641,9 @@ through any previously extracted configs.
   <li>This will bring your Authenion configuration data from authenion server to the UI. </li>		  
 			  
 </ol>
+		  </div>
+			  <div>
+			  <a name="OIDC CONFIGURATION"</a>
 		  
 		  <h4>OIDC CONFIGURATION</h4>
 		  <p>The OIDC configuration page allows you to connect with your Identity Provider / OIDC Token Provider. This configuration includes details such as Token Providers OAuth/OIDC endpoints, Authenion Client registration details, Claims to get from the Token Provider. It includes additional configuration for Authenion such as Authenion Instance, Domain & Session duration configurations. 
@@ -652,6 +664,9 @@ through any previously extracted configs.
   <li>Authenion Instances 	- 	https://<authenion.example.com >:8090 </li>
 			  
 </ol>
+			  </div>
+			  <div>
+				  <a name="sidebar"</a>
 		  <h4>sidebar</h4>
 		  <ol>
   <li>application</li>
@@ -665,9 +680,10 @@ through any previously extracted configs.
   
 			  
 </ol>
+			  </div>
+			  <div>
 		  
-		  
-  
+				  <a name="applications"</a>
 		  <h4>applications</h4>
 		  <p>Applications represent the protected Oracle applications to which the user requests are sent. Each application will have a dedicated entry in the Dashboard/Applications tab. Applications are configured with Virtual Servers, Resources, Header Mappings & corresponds to a single Application Host (target application/backend server). Applications in Authenion can be configured with both protected and unprotected (excluded) resources. Authentication requirements will be set for the protected resources in an application. 
 
@@ -695,10 +711,16 @@ through any previously extracted configs.
   
 </ol>
 	  <p>3.Click Save to complete the configuration for a new application. </p>
+			</div>
+	  <div>
+	  <a name="virtual servers"</a>
 	  <h4>virtual servers</h4>
 	  <p>Virtual Servers enables you to protect multiple applications and their hosts. The Virtual Server is a combination of hostname and port number and is defined by example.com:443. 
 	  </p>
-	  <h4>adding a virtual server</h4>
+			</div>
+				  <div>
+					  <a name=""</a>
+	  <h4>adding a virtual servers</h4>
 	  <p>1.	Click Virtual Servers in the sidebar menu. 
 2.	Click the “+ New Virtual Server” button in the Virtual Servers page. 
 3.	Enter the following details to create a Virtual Server for your application. 
@@ -712,7 +734,9 @@ For example,
 		<li>Port 	 	 	:   443 </li>
   <li>Use SSL 	 	 	:   <checkbox> 	 	<HTTP or HTTPS> </li>
 </ol>	  
-	  
+		</div>
+	  <div>
+		  <a name="headrer mappings"</a>
 	  <h4>headrer mappings</h4>
 	  <P>Header Mappings sends the User attributes to the target application post authentication. The target application will use them for validation purposes. The Header Mappings will receive the user attributes from the Claims which are sent by the Token Provider. Once the claims re received, it is then made available as HTTP-Headers to the target applications. </P>
 
@@ -729,6 +753,9 @@ For example,
   <li>App Header 	 	OIDC Claim </li>
   <li>USER_MAIL 	 	:   email </li>
 </ol>
+	  </div>
+	  <div>
+		  <a name="resources"</a>
 	  <h4>resources</h4>
 	  <p>Resources are the components/URI of the applications. The resources can be mapped as either protected or excluded resources in an application. Each application should have at least one protected & excluded resources configured to it. 
 
@@ -746,19 +773,31 @@ For example,
 	▪ 	/apex 	 	<Resource path starts with a ‘/’. Multiple resource paths can be added> 
 </li>
 </ol>
+	  </div>
+	  <div>
+		  <a name="authenion status"</a>
 	  <h4>authenion status</h4>
 	  <p>The Authenion Status page shows the health of the Authenion Instance that is running in the Authenion server. This status page also displays your authenion license information. </p>
-	  <h4>export</h4>
+					  </div>
+					  <div><a name="export"<a/>
+		  <h4>export</h4>
 	  <p>The Export button is a quick operation that lets you download the current configurations from the UI. The exported data will be in the format of a JSON file. This file acts as a backup for the Authenion configuration data. The downloaded file name is export.json. </p>
-         
+					  </div>
+					  <div>
+						  <a name"sync"</a>
 	  <h4>sync</h4>
 	  <p>The Sync is a manual operation lets you push all the configuration data from Authenion UI back to the Authenion server. 
 When you install Authenion for the first time, there will be no configuration data in the UI or in the Authenion server. The Sync operation should be triggered for both new configurations & modifications that we perform in the Authenion UI. Any changes which are not pushed from the UI to Authenion server will not be reflected until Sync operation is triggered manually. 
 </p>
+		  </div>
+	  <div>
+	  <a name="Configure your Identity Provider"</a>
 	  <h4>Configure your Identity Provider </h4>
 		  <p>This section provides the steps required to configure Authenion with the Identity/Token Providers like PingFederate, PingOne, Microsoft Azure, etc. The integration will be established through OAuth and OpenID Connect protocols.  
 		  </p>
-	  
+					  </div>
+					  <div>
+						  <a name="pingfederate as the token provider"</a>
 		  <h4>pingfederate as the token provider</h4>
 		  <P>pre-requisites</p>
 		  <ol>
@@ -783,6 +822,10 @@ Configure the following attributes to be returned in id_token and as claims in u
 </li>
   <li>3.Review the client configurations and click “Save”. </li>
   <li>4.Replicate the configurations if PingFederate is configured in a cluster. </li>
+		  </div>
+		  <div>
+			  <a name="microsoft azure active directory as the token provider"</a>
+		  
 		  <h4>microsoft azure active directory as the token provider</h4>
 		  <p>pre-requistes</p>
 			 <ol>
@@ -804,7 +847,7 @@ Configure the following attributes to be returned in id_token and as claims in u
 <li>The Authenion client application need to access resources in a web API. You can use the Microsoft Azure platform for authorizing scopes, permissions-based access to fetch the appropriate user data. </li>
 			  <li>The user data can be added as claims using the OIDC userinfo endpoint. Any attributes that are required by the target application can ab added as claims in the userinfo endpoint. </li>
 </ol>
-
+		  </div>
 	  
 	  
 	  
